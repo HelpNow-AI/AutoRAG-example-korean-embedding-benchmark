@@ -12,8 +12,8 @@ root_path = os.path.dirname(os.path.realpath(__file__))
 data_path = os.path.join(root_path, 'data')
 
 @click.command()
-@click.option('--config', type=click.Path(exists=True), default=os.path.join(root_path, 'config',
-                                                                             'embedding_benchmark.yaml'))
+# @click.option('--config', type=click.Path(exists=True), default=os.path.join(root_path, 'config',
+#                                                                              'embedding_benchmark.yaml'))
 @click.option('--qa_data_path', type=click.Path(exists=True), default=os.path.join(data_path, 'qa_v4.parquet'))
 @click.option('--corpus_data_path', type=click.Path(exists=True),
               default=os.path.join(data_path, 'ocr_corpus_v3.parquet'))
@@ -22,7 +22,7 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
 
     autorag.embedding_models = {}
-    
+
     autorag.embedding_models['qwen3-embedding-4b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-4B")
     autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
     autorag.embedding_models['inf-retriever-v1'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/retriever-v1")
