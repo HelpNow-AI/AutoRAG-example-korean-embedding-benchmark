@@ -4,9 +4,9 @@ import autorag
 import click
 from autorag.evaluator import Evaluator
 from dotenv import load_dotenv
-from llama_index.embeddings.cohere import CohereEmbedding
+# from llama_index.embeddings.cohere import CohereEmbedding
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.embeddings.upstage import UpstageEmbedding
+# from llama_index.embeddings.upstage import UpstageEmbedding
 
 root_path = os.path.dirname(os.path.realpath(__file__))
 data_path = os.path.join(root_path, 'data')
