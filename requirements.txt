@@ -2,3 +2,4 @@ AutoRAG[gpu]>=0.2.11
 click
 python-dotenv
 llama-index-embeddings-huggingface
+chromadb==0.3.23
