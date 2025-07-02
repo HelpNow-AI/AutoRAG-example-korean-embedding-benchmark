@@ -1,5 +1,4 @@
-AutoRAG>=0.2.11
+AutoRAG[gpu]>=0.2.11
 click
 python-dotenv
-llama-index-embeddings-upstage
-llama-index-embeddings-cohere
+llama-index-embeddings-huggingface
