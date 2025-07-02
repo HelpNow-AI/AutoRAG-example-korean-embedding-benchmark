@@ -21,7 +21,7 @@ data_path = os.path.join(root_path, 'data')
 def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
 
-    autorag.embedding_models = {}
+    # autorag.embedding_models = {}
     
     autorag.embedding_models['qwen3-embedding-4b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-4B")
     autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
