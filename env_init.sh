@@ -4,7 +4,7 @@ set -e
 # 1. curl 설치
 if ! command -v curl &> /dev/null; then
     echo "🔧 curl 설치 중..."
-    apt-get update && apt-get install -y curl
+    sudo apt-get update && apt-get install -y curl
 else
     echo "✅ curl 이미 설치됨"
 fi
@@ -12,7 +12,7 @@ fi
 # 2. uv 설치
 if ! command -v uv &> /dev/null; then
     echo "🔧 uv 설치 중..."
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    sudo curl -LsSf https://astral.sh/uv/install.sh | sh
     export PATH="$HOME/.cargo/bin:$PATH"
 else
     echo "✅ uv 이미 설치됨"
