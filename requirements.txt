@@ -2,4 +2,6 @@ AutoRAG[gpu]==0.2.11
 click
 python-dotenv
 llama-index-embeddings-huggingface
+llama-index-embeddings-bedrock
+llama-index-embeddings-gemini
 chromadb==0.6.3
