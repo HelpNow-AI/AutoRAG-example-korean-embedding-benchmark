@@ -18,11 +18,14 @@ if ! command -v uv &> /dev/null; then
     export PATH="$HOME/.local/bin:$PATH"
 else
     echo "✅ uv 이미 설치됨"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# ✅ uv 명령이 존재하는지 다시 확인
+# uv 명령이 존재하는지 다시 확인
 if ! command -v uv &> /dev/null; then
     echo "❌ uv 명령을 찾을 수 없습니다. PATH를 확인하세요."
+    echo "현재 경로: $PATH"
+    echo "수동으로 실행: export PATH=\$HOME/.local/bin:\$PATH"
     exit 1
 fi
 
