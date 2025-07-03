@@ -28,7 +28,7 @@ fi
 # pyproject.toml 초기화
 if [ ! -f "pyproject.toml" ]; then
     echo "🆕 uv init 실행 중..."
-    "$UV_BIN" init --yes
+    "$UV_BIN" init
 else
     echo "✅ pyproject.toml 이미 존재함"
 fi
