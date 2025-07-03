@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-export PATH="$HOME/.local/bin:$PATH"
-
 # curl 설치
 if ! command -v curl &> /dev/null; then
     echo "🔧 curl 설치 중..."
@@ -39,7 +37,6 @@ else
     exit 1
 fi
 
-# 영구 PATH 추가 (한번만)
-grep -qxF 'export PATH="$HOME/.local/bin:$PATH"' ~/.bashrc || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+export PATH="$HOME/.local/bin:$PATH"
 
 echo "🎉 설치 완료!"
