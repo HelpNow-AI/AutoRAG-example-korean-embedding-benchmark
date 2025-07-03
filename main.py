@@ -26,7 +26,7 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
     autorag.embedding_models['inf-retriever-v1-1.5b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/inf-retriever-v1-1.5b")
     autorag.embedding_models['gte-qwen2-1.5b-instruct'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Alibaba-NLP/gte-Qwen2-1.5B-instruct")
-    autorag.embedding_models['jina-embeddings-v4'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="jinaai/jina-embeddings-v4")
+    # autorag.embedding_models['jina-embeddings-v4'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="jinaai/jina-embeddings-v4")
 
     autorag.embedding_models.pop('openai')
     autorag.embedding_models.pop('openai_embed_3_small')
