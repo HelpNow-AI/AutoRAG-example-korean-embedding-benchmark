@@ -12,10 +12,18 @@ fi
 # 2. uv 설치
 if ! command -v uv &> /dev/null; then
     echo "🔧 uv 설치 중..."
-    sudo curl -LsSf https://astral.sh/uv/install.sh | sh
-    export PATH="$HOME/.cargo/bin:$PATH"
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    # ⭐ 설치 후 PATH 반영
+    export PATH="$HOME/.local/bin:$PATH"
 else
     echo "✅ uv 이미 설치됨"
+fi
+
+# ✅ uv 명령이 존재하는지 다시 확인
+if ! command -v uv &> /dev/null; then
+    echo "❌ uv 명령을 찾을 수 없습니다. PATH를 확인하세요."
+    exit 1
 fi
 
 # 3. pyproject.toml 초기화
