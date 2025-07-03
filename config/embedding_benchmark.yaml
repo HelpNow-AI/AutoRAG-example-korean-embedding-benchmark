@@ -13,3 +13,4 @@ node_lines:
             - bge-m3
             - qwen3-embedding-0.6b
             - gte-qwen2-1.5b-instruct
+            - jina-embeddings-v4
