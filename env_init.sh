@@ -4,7 +4,7 @@ set -e
 # 1. curl 설치
 if ! command -v curl &> /dev/null; then
     echo "🔧 curl 설치 중..."
-    sudo apt-get update && apt-get install -y curl
+    sudo apt-get update && sudo apt-get install -y curl
 else
     echo "✅ curl 이미 설치됨"
 fi
