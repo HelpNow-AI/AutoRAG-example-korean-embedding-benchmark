@@ -23,12 +23,11 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
 
     # autorag.embedding_models = {}
     autorag.embedding_models['bge-m3'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="BAAI/bge-m3")
-    autorag.embedding_models['qwen3-embedding-4b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-4B")
     autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
-    autorag.embedding_models['inf-retriever-v1'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/inf-retriever-v1")
 
     autorag.embedding_models.pop('openai')
     autorag.embedding_models.pop('openai_embed_3_small')
+    autorag.embedding_models.pop('openai_embed_3_large')
     autorag.embedding_models.pop('huggingface_baai_bge_small')
     autorag.embedding_models.pop('huggingface_cointegrated_rubert_tiny2')
     autorag.embedding_models.pop('huggingface_all_mpnet_base_v2')
