@@ -16,4 +16,3 @@ node_lines:
             - gte-qwen2-1.5b-instruct
             - amazon-titan-embed-text-v2
             - cohere-embed-multilingual-v3
-            - gemini-text-embedding-004

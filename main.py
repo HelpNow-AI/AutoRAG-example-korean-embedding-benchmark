@@ -41,9 +41,9 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
                                                                              aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
                                                                              region_name=os.getenv('AWS_REGION'),
                                                                              )
-    autorag.embedding_models['gemini-text-embedding-004'] = autorag.LazyInit(GeminiEmbedding,
-                                                                        model_name='models/text-embedding-004',
-                                                                        api_key=os.getenv('GEMINI_API_KEY'))
+    # autorag.embedding_models['gemini-text-embedding-004'] = autorag.LazyInit(GeminiEmbedding,
+    #                                                                     model_name='models/text-embedding-004',
+    #                                                                     api_key=os.getenv('GEMINI_API_KEY'))
 
     autorag.embedding_models.pop('openai')
     autorag.embedding_models.pop('openai_embed_3_small')
