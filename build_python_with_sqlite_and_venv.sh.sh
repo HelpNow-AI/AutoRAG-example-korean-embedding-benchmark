@@ -12,6 +12,14 @@ BUILD_DIR="$WORKDIR/_build"
 SQLITE_PREFIX="$BUILD_DIR/sqlite"
 PYTHON_PREFIX="$BUILD_DIR/python"
 
+# === 0. 필수 패키지 설치 ===
+echo "📦 필수 빌드 패키지 설치 확인/설치 중..."
+sudo apt-get update
+sudo apt-get install -y \
+  build-essential libssl-dev zlib1g-dev \
+  libbz2-dev libreadline-dev libsqlite3-dev \
+  libffi-dev wget curl libncursesw5-dev xz-utils tk-dev
+
 # === 1. 작업 디렉토리 생성 ===
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
@@ -24,6 +32,11 @@ cd sqlite-autoconf-${SQLITE_VERSION}
 ./configure --prefix="$SQLITE_PREFIX" --enable-fts5
 make -j"$(nproc)"
 make install
+
+# SQLite CLI 버전 출력
+echo "✅ SQLite CLI 버전:"
+"$SQLITE_PREFIX/bin/sqlite3" --version
+
 cd "$BUILD_DIR"
 
 # === 3. Python 소스 다운로드 및 설치 ===
@@ -52,5 +65,10 @@ echo "✅ Python 버전 확인:"
 python --version
 echo "✅ SQLite 버전 확인:"
 python -c "import sqlite3; print('SQLite version:', sqlite3.sqlite_version)"
+
+# === 6. 빌드 산출물 정리 (옵션) ===
+echo "🧹 빌드 파일 정리 중..."
+rm -rf "$BUILD_DIR/sqlite-autoconf-${SQLITE_VERSION}" "$BUILD_DIR/Python-${PYTHON_VERSION}" \
+       "$BUILD_DIR/sqlite-autoconf-${SQLITE_VERSION}.tar.gz" "$BUILD_DIR/Python-${PYTHON_VERSION}.tgz"
 
 echo "🎉 완료! .venv 가상환경이 생성되었고, SQLite 3.50.2가 연결되어 있습니다."
