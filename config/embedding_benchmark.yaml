@@ -11,3 +11,4 @@ node_lines:
           embedding_model:
            - qwen3-embedding-0.6b
            - bge-m3
+           - inf-retriever-v1-1.5b
