@@ -9,7 +9,4 @@ node_lines:
       modules:
         - module_type: vectordb
           embedding_model:
-            - inf-retriever-v1-1.5b
-            - bge-m3
-            - qwen3-embedding-0.6b
-            - gte-qwen2-1.5b-instruct
+            - gemini-embedding-001
