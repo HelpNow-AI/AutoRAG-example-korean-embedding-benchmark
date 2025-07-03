@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install -y \
   build-essential libssl-dev zlib1g-dev \
   libbz2-dev libreadline-dev libsqlite3-dev \
-  libffi-dev wget curl libncursesw5-dev xz-utils tk-dev
+  libffi-dev wget curl libncursesw5-dev xz-utils tk-dev liblzma-dev
 
 # === 1. 작업 디렉토리 생성 ===
 mkdir -p "$BUILD_DIR"
@@ -60,7 +60,7 @@ echo "🧪 가상환경 생성: $WORKDIR/.venv"
 "$PYTHON_PREFIX/bin/python3" -m venv .venv
 
 # === 5. 버전 확인 ===
-source .venv/bin/activate
+. .venv/bin/activate
 echo "✅ Python 버전 확인:"
 python --version
 echo "✅ SQLite 버전 확인:"
