@@ -28,7 +28,7 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     # autorag.embedding_models['inf-retriever-v1-1.5b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/inf-retriever-v1-1.5b")
     # autorag.embedding_models['gte-qwen2-1.5b-instruct'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Alibaba-NLP/gte-Qwen2-1.5B-instruct")
     autorag.embedding_models['gemini-embedding-001'] = autorag.LazyInit(GeminiEmbedding,
-                                                                        model_name='gemini-embedding-exp-03-07',
+                                                                        model_name='models/text-embedding-004',
                                                                         api_key=os.getenv('GEMINI_API_KEY'))
 
     autorag.embedding_models.pop('openai')
