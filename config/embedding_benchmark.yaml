@@ -9,4 +9,4 @@ node_lines:
       modules:
         - module_type: vectordb
           embedding_model:
-            - gemini-embedding-001
+            - mxbai-embed-xsmall-v1
