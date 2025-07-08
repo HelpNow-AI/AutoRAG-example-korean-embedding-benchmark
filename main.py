@@ -42,7 +42,7 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     #                                                                          region_name=os.getenv('AWS_REGION'),
     #                                                                          )
     autorag.embedding_models['text-multilingual-embedding-002'] = autorag.LazyInit(GeminiEmbedding,
-                                                                        model_name='models/text-multilingual-embedding-002',
+                                                                        model_name='text-multilingual-embedding-002',
                                                                         api_key=os.getenv('GEMINI_API_KEY'))
 
     autorag.embedding_models.pop('openai')
