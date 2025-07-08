@@ -24,26 +24,26 @@ def main(config, qa_data_path, corpus_data_path, project_dir):
     load_dotenv()
 
     # autorag.embedding_models = {}
-    autorag.embedding_models['mxbai-embed-large-v1'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="mixedbread-ai/mxbai-embed-large-v1")
-    autorag.embedding_models['bge-m3'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="BAAI/bge-m3")
-    autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
-    autorag.embedding_models['inf-retriever-v1-1.5b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/inf-retriever-v1-1.5b")
-    autorag.embedding_models['gte-qwen2-1.5b-instruct'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Alibaba-NLP/gte-Qwen2-1.5B-instruct")
-    autorag.embedding_models['amazon-titan-embed-text-v2'] = autorag.LazyInit(BedrockEmbedding,
-                                                                             model_name="amazon.titan-embed-text-v2:0",
-                                                                             aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-                                                                             aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
-                                                                             region_name=os.getenv('AWS_REGION'),
-                                                                             )
-    autorag.embedding_models['cohere-embed-multilingual-v3'] = autorag.LazyInit(BedrockEmbedding,
-                                                                             model_name="cohere.embed-multilingual-v3",
-                                                                             aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-                                                                             aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
-                                                                             region_name=os.getenv('AWS_REGION'),
-                                                                             )
-    # autorag.embedding_models['gemini-text-embedding-004'] = autorag.LazyInit(GeminiEmbedding,
-    #                                                                     model_name='models/text-embedding-004',
-    #                                                                     api_key=os.getenv('GEMINI_API_KEY'))
+    # autorag.embedding_models['mxbai-embed-large-v1'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="mixedbread-ai/mxbai-embed-large-v1")
+    # autorag.embedding_models['bge-m3'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="BAAI/bge-m3")
+    # autorag.embedding_models['qwen3-embedding-0.6b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Qwen/Qwen3-Embedding-0.6B")
+    # autorag.embedding_models['inf-retriever-v1-1.5b'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="infly/inf-retriever-v1-1.5b")
+    # autorag.embedding_models['gte-qwen2-1.5b-instruct'] = autorag.LazyInit(HuggingFaceEmbedding, model_name="Alibaba-NLP/gte-Qwen2-1.5B-instruct")
+    # autorag.embedding_models['amazon-titan-embed-text-v2'] = autorag.LazyInit(BedrockEmbedding,
+    #                                                                          model_name="amazon.titan-embed-text-v2:0",
+    #                                                                          aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    #                                                                          aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+    #                                                                          region_name=os.getenv('AWS_REGION'),
+    #                                                                          )
+    # autorag.embedding_models['cohere-embed-multilingual-v3'] = autorag.LazyInit(BedrockEmbedding,
+    #                                                                          model_name="cohere.embed-multilingual-v3",
+    #                                                                          aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+    #                                                                          aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+    #                                                                          region_name=os.getenv('AWS_REGION'),
+    #                                                                          )
+    autorag.embedding_models['text-multilingual-embedding-002'] = autorag.LazyInit(GeminiEmbedding,
+                                                                        model_name='models/text-multilingual-embedding-002',
+                                                                        api_key=os.getenv('GEMINI_API_KEY'))
 
     autorag.embedding_models.pop('openai')
     autorag.embedding_models.pop('openai_embed_3_small')

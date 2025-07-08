@@ -9,10 +9,11 @@ node_lines:
       modules:
         - module_type: vectordb
           embedding_model:
-            - mxbai-embed-large-v1
-            - bge-m3
-            - qwen3-embedding-0.6b
-            - inf-retriever-v1-1.5b
-            - gte-qwen2-1.5b-instruct
-            - amazon-titan-embed-text-v2
-            - cohere-embed-multilingual-v3
+            # - mxbai-embed-large-v1
+            # - bge-m3
+            # - qwen3-embedding-0.6b
+            # - inf-retriever-v1-1.5b
+            # - gte-qwen2-1.5b-instruct
+            # - amazon-titan-embed-text-v2
+            # - cohere-embed-multilingual-v3
+            - text-multilingual-embedding-002
